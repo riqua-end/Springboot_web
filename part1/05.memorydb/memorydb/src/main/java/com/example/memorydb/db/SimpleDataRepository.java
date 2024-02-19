@@ -19,7 +19,7 @@ abstract public class SimpleDataRepository<T extends Entity, ID extends Long> im
         @Override
         public int compare(T o1, T o2) {
             // 데이터의 ID를 기준으로 정렬합니다.
-            return Long.compare(o1.getID(),o2.getID());
+            return Long.compare(o1.getId(),o2.getId());
         }
     };
 
@@ -40,14 +40,15 @@ abstract public class SimpleDataRepository<T extends Entity, ID extends Long> im
         // 만약 Stream이 비어있다면 빈 Optional을 반환합니다.
         var prevData = dataList.stream()
                 .filter(it ->{
-                    return it.getID().equals(data.getID()); // ID가 같은 요소를 필터링합니다.
+                    return it.getId().equals(data.getId()); // ID가 같은 요소를 필터링합니다.
                 })
                 .findFirst();
 
         // 이전 데이터가 있는 경우
         if (prevData.isPresent()) { // .isPresent() 는 Optional객체의 값이 null이면 false,아니면 true를 반환
             // 이전 데이터를 삭제하고 새로운 데이터로 대체합니다.
-            dataList.remove(prevData);
+            // 데이터를 지울때 Optional로 감싸진 애를 넣는게 아니라 get()으로 명확하게 해당 엔티티를 지워야함
+            dataList.remove(prevData.get()); // prevData 에는 Optional<UserEntity>
             dataList.add(data);
         }
         else {
@@ -65,7 +66,7 @@ abstract public class SimpleDataRepository<T extends Entity, ID extends Long> im
     public Optional<T> findById(ID id) {
         return dataList.stream()
                 .filter(it ->{
-                    return (it.getID().equals(id));
+                    return (it.getId().equals(id));
                 })
                 .findFirst();
     }
@@ -83,13 +84,13 @@ abstract public class SimpleDataRepository<T extends Entity, ID extends Long> im
     public void delete(ID id) {
         var deleteEntity = dataList.stream()
                 .filter(it ->{
-                    return (it.getID().equals(id));
+                    return (it.getId().equals(id));
                 })
                 .findFirst();
 
         // 삭제할 데이터가 존재하는 경우 삭제합니다.
         if (deleteEntity.isPresent()){
-            dataList.remove(deleteEntity);
+            dataList.remove(deleteEntity.get()); // 여기도 마찬가지로 Optional이기 때문에 .get()으로 불러와야함
         }
     }
 }

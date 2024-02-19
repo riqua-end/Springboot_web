@@ -4,5 +4,5 @@ public interface PrimaryKey {
 
     void setId(Long id);
 
-    Long getID();
+    Long getId();
 }
