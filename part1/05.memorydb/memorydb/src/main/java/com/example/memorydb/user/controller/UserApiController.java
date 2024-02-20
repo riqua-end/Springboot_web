@@ -42,4 +42,10 @@ public class UserApiController {
         var response = userService.findById(id);
         return response.get();
     }
+
+    // 사용자 10명을 생성 후 70점 이상의 사용자의 정보를 찾아주는 method 작성하기
+    @GetMapping("/score")
+    public List<UserEntity> filterScore(@RequestParam int score){
+        return userService.filterScore(score);
+    }
 }
