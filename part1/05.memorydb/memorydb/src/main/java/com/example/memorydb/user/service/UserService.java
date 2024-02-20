@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -21,5 +22,13 @@ public class UserService {
 
     public List<UserEntity> findAll(){
         return userRepository.findAll();
+    }
+
+    public void delete(Long id){
+        userRepository.delete(id);
+    }
+
+    public Optional<UserEntity> findById(long id){
+        return userRepository.findById(id);
     }
 }
