@@ -30,6 +30,15 @@
           </set>
         </option>
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/part1/07. jpa/jpa" />
+        <option name="gradleJvm" value="corretto-17" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/part1/07. jpa/jpa" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
   </component>
 </project>
