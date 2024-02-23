@@ -43,3 +43,30 @@ services:
     volumes:
       - C:\Temp\MYSQL:/var/lib/mysql
 ```
+
+[07 . jpa ]
+---
+* Spring Data JPA 로 MySQL Database 연결하고 적용
+
+[07_1 memorydbToJpa ]
+---
+* 기존 Memorydb 프로젝트를 Jpa로 변환
+* MySQL Database 사용
+```
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      format_sql: true
+      dialect: package org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:mysql://localhost:3306/book_store?useSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: [username]
+    password: [password]
+
+server:
+  port: 8181
+```
