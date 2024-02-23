@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jpa.main.iml" filepath="$PROJECT_DIR$/.idea/modules/jpa.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/memorydb.main.iml" filepath="$PROJECT_DIR$/.idea/modules/memorydb.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/memorydbToJpa.main.iml" filepath="$PROJECT_DIR$/.idea/modules/memorydbToJpa.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rest.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/springboot_web.iml" filepath="$PROJECT_DIR$/.idea/springboot_web.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/validation.main.iml" filepath="$PROJECT_DIR$/.idea/modules/validation.main.iml" />

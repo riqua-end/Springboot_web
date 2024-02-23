@@ -7,8 +7,16 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.30/f195ee86e6c896ea47a1d39defbe20eb59cd149d/lombok-1.18.30.jar" />
         </processorPath>
-        <module name="rest.main" />
+        <module name="memorydbToJpa.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="07_1 memorydbToJpa.memorydb" target="17" />
+      <module name="07_1 memorydbToJpa.memorydb.main" target="17" />
+      <module name="07_1 memorydbToJpa.memorydb.test" target="17" />
+      <module name="com.example.memorydb" target="17" />
+      <module name="com.example.memorydb.main" target="17" />
+      <module name="com.example.memorydb.test" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -39,6 +39,15 @@
           </set>
         </option>
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/part1/07_1 memorydbToJpa/memorydbToJpa" />
+        <option name="gradleJvm" value="corretto-17" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/part1/07_1 memorydbToJpa/memorydbToJpa" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
   </component>
 </project>
