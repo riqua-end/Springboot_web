@@ -50,8 +50,14 @@ services:
 
 [07_1 memorydbToJpa ]
 ---
+### memorydbToJpa
 * 기존 Memorydb 프로젝트를 Jpa로 변환
 * MySQL Database 사용
+* Query Method , Native Method (@Query 어노테이션)
+* @Query는 실행할 메서드 위에 정적쿼리를 작성 ( JQPL 문법 )
+#### JPQL ?
+* JPA(Java Persistence API)에서 사용하는 객체 지향 쿼리 언어. SQL과 유사하지만, 엔티티 객체를 중심으로 쿼리를 작성하며 데이터베이스 종속성 없이 사용할 수 있다는 장점이 있음
+### application.yaml
 ```
 spring:
   jpa:
@@ -70,3 +76,6 @@ spring:
 server:
   port: 8181
 ```
+---
+### [ Spring Data JPA Query Method Docs ]
+* <https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html>
