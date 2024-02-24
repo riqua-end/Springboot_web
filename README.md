@@ -79,3 +79,10 @@ server:
 ---
 ### [ Spring Data JPA Query Method Docs ]
 * <https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html>
+---
+
+## [08 . simple_board]
+* Language : Java 17
+* Framework : Spring Boot 3.2.3
+* DBMS : MySQL 8
+* DB Library : JPA
