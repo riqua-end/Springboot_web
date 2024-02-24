@@ -86,6 +86,6 @@ server:
 * Framework : Spring Boot 3.2.3
 * DBMS : MySQL 8
 * DB Library : JPA
-```
+---
+### [ simple_board ERD ]
 ![스크린샷 2024-02-24 174604](https://github.com/riqua-end/Springboot_web/assets/129530989/137daefd-9c61-47e9-997f-30e33f2f74c9)
-```
