@@ -1,11 +1,10 @@
 package com.example.simpleboard.post.db;
 
+import com.example.simpleboard.board.db.BoardEntity;
 import com.example.simpleboard.reply.db.ReplyEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -25,7 +24,12 @@ public class PostEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long boardId;
+//    private Long boardId;
+
+    @ManyToOne
+    @JsonIgnore // 무한 반복 탈출
+    @ToString.Exclude // ToString의 무한 반복을 막을 때 사용
+    private BoardEntity board; // 객체지향으로 접근, 1:N 설정 , board_id
 
     private String userName;
 

@@ -1,38 +1,36 @@
 package com.example.simpleboard.post.model;
 
+import com.example.simpleboard.board.db.BoardEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class PostRequest {
+public class PostDTO {
 
-    private Long boardId = 1L;
+    private Long id;
 
-    @NotBlank
+    private Long boardId;
+
     private String userName;
 
-    @NotBlank
-    @Size(min = 4,max = 4)
     private String password;
 
-    @NotBlank
-    @Email
     private String email;
 
-    @NotBlank
+    private String status;
+
     private String title;
 
-    @NotBlank
     private String content;
+
+    private LocalDateTime postedAt;
 }
