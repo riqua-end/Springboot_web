@@ -18,7 +18,7 @@ public class PostService {
 
     private final PostRepository postRepository;
     private final BoardRepository boardRepository;
-    private final ReplyService replyService;
+//    private final ReplyService replyService;
 
     public PostEntity create(
         PostRequest postRequest
@@ -55,8 +55,9 @@ public class PostService {
                     }
 
                     // 답변 글도 같이 적용
-                    var replyList = replyService.findAllByPostId(it.getId());
-                    it.setReplyList(replyList);
+                    // PostEntity 안에 OneToMany 어노테이션을 통해 mappedBy에서 reply 리스트를 가져옴
+//                    var replyList = replyService.findAllByPostId(it.getId());
+//                    it.setReplyList(replyList);
 
                     return it;
 

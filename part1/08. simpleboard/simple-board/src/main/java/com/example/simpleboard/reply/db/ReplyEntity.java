@@ -1,10 +1,9 @@
 package com.example.simpleboard.reply.db;
 
+import com.example.simpleboard.post.db.PostEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -19,7 +18,10 @@ public class ReplyEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long postId;
+    @ManyToOne
+    @JsonIgnore
+    @ToString.Exclude
+    private PostEntity post; // post_id
 
     private String userName;
 

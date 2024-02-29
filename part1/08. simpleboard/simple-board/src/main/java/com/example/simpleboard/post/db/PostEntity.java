@@ -46,6 +46,10 @@ public class PostEntity {
 
     private LocalDateTime postedAt;
 
-    @Transient // 데이터베이스에 해당 컬럼이 없을 때 사용
+//    @Transient // 데이터베이스에 해당 컬럼이 없을 때 사용
+    @OneToMany(
+            mappedBy = "post"
+    )
+    @Builder.Default
     private List<ReplyEntity> replyList = List.of();
 }
