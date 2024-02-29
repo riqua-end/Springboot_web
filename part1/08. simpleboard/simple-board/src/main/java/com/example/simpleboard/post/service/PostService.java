@@ -1,12 +1,14 @@
 package com.example.simpleboard.post.service;
 
 import com.example.simpleboard.board.db.BoardRepository;
+import com.example.simpleboard.common.Api;
+import com.example.simpleboard.common.Pagination;
 import com.example.simpleboard.post.db.PostEntity;
 import com.example.simpleboard.post.db.PostRepository;
 import com.example.simpleboard.post.model.PostRequest;
 import com.example.simpleboard.post.model.PostViewRequest;
-import com.example.simpleboard.reply.service.ReplyService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -18,7 +20,6 @@ public class PostService {
 
     private final PostRepository postRepository;
     private final BoardRepository boardRepository;
-//    private final ReplyService replyService;
 
     public PostEntity create(
         PostRequest postRequest
@@ -68,8 +69,21 @@ public class PostService {
                 );
     }
 
-    public List<PostEntity> all() {
-        return postRepository.findAll();
+    public Api<List<PostEntity>> all(Pageable pageable) {
+        var list = postRepository.findAll(pageable);
+
+        var pagination = Pagination.builder()
+                .page(list.getNumber())
+                .size(list.getSize())
+                .currentElements(list.getNumberOfElements()) // 해당 페이지에 있는 엘리먼트 갯수
+                .totalElements(list.getTotalElements())
+                .totalPage(list.getTotalPages())
+                .build();
+
+        return Api.<List<PostEntity>>builder()
+                .body(list.toList())
+                .pagination(pagination)
+                .build();
     }
 
     public void delete(PostViewRequest postViewRequest) {
