@@ -89,3 +89,15 @@ server:
 ---
 ### [ simple_board ERD ]
 ![스크린샷 2024-02-24 174604](https://github.com/riqua-end/Springboot_web/assets/129530989/137daefd-9c61-47e9-997f-30e33f2f74c9)
+
+
+---
+## [09 . filter]
+### Filter ?
+* 필터는 Servlet 또는 컨트롤러에 도달하기 전에 요청 및 응답을 가로채서 처리
+### ContentCaching ?
+* 일반적으로 Servlet은 요청 및 응답 본문을 한번만 읽을 수 있음.
+* ContentCaching 을 사용하면 본문을 캐싱하여 나중에 다시 읽을 수 있음.
+* ContentCaching 을 사용하여 요청/응답 본문을 문자열로 변환하여 쉽게 로깅
+* copyBodyToResponse()로 본문을 다시 실제 응답 객체에 복사해야됨
+
