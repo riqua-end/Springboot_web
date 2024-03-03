@@ -92,7 +92,7 @@ server:
 
 
 ---
-## [09 . filter & interceptor]
+## [09 . filter & interceptor & AOP]
 ### Filter ?
 * 필터는 Servlet 또는 컨트롤러에 도달하기 전에 요청 및 응답을 가로채서 처리
 ### ContentCaching ?
@@ -104,5 +104,12 @@ server:
 * 스프링 인터셉터는 HTTP 요청을 가로채서 처리하는 컴포넌트
 * 클라이언트의 요청이 컨트롤러로 전달되기 전에 사전 작업을 수행하거나,
 * 컨트롤러의 실행 이후에 사후 작업을 수행.
+### AOP ?
+* AOP (Aspect Oriented Programming) - 관점 지향 프로그래밍
+* AOP는 공통 기능을 코드의 여러 지점에 분리하여 코드의 모듈성과 유지보수성을 향상시키는 프로그래밍 기법
+* 암호화/복호화 외에도 로깅, 성능 측정 등 다양한 용도로 활용
+---
+![스크린샷 2024-03-03 171341](https://github.com/riqua-end/Springboot_web/assets/129530989/ddc976d7-7cb1-481d-908e-0dc491c2f330)
+![스크린샷 2024-03-03 171420](https://github.com/riqua-end/Springboot_web/assets/129530989/96f8a87b-8195-4d95-873b-6103745c4792)
 
 
