@@ -12,7 +12,7 @@ import org.springframework.web.util.ContentCachingResponseWrapper;
 
 import java.io.IOException;
 
-@Component
+//@Component AOP 실습으로 주석 처리
 @Slf4j
 // LoggerFilter 클래스가 표준 Servlet Filter 인터페이스를 구현하도록 하여 HTTP 요청 및 응답을 가로채서 처리할 수 있도록 합니다.
 public class LoggerFilter implements Filter {

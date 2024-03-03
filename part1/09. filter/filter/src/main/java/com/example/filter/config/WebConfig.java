@@ -16,7 +16,7 @@ public class WebConfig implements WebMvcConfigurer {
     // 스프링 애플리케이션이 사용할 OpenApiInterceptor를 명시적으로 등록
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(openApiInterceptor)
-                .addPathPatterns("/**"); // root 하위에 있는 모든 주소를 매핑
+//        registry.addInterceptor(openApiInterceptor)
+//                .addPathPatterns("/**"); // root 하위에 있는 모든 주소를 매핑, AOP 실습으로 주석 처리
     }
 }
