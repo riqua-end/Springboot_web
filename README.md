@@ -92,7 +92,7 @@ server:
 
 
 ---
-## [09 . filter]
+## [09 . filter & interceptor]
 ### Filter ?
 * 필터는 Servlet 또는 컨트롤러에 도달하기 전에 요청 및 응답을 가로채서 처리
 ### ContentCaching ?
@@ -100,4 +100,9 @@ server:
 * ContentCaching 을 사용하면 본문을 캐싱하여 나중에 다시 읽을 수 있음.
 * ContentCaching 을 사용하여 요청/응답 본문을 문자열로 변환하여 쉽게 로깅
 * copyBodyToResponse()로 본문을 다시 실제 응답 객체에 복사해야됨
+### interceptor
+* 스프링 인터셉터는 HTTP 요청을 가로채서 처리하는 컴포넌트
+* 클라이언트의 요청이 컨트롤러로 전달되기 전에 사전 작업을 수행하거나,
+* 컨트롤러의 실행 이후에 사후 작업을 수행.
+
 
