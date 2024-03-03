@@ -112,4 +112,7 @@ server:
 ![스크린샷 2024-03-03 171341](https://github.com/riqua-end/Springboot_web/assets/129530989/ddc976d7-7cb1-481d-908e-0dc491c2f330)
 ![스크린샷 2024-03-03 171420](https://github.com/riqua-end/Springboot_web/assets/129530989/96f8a87b-8195-4d95-873b-6103745c4792)
 
+## Filter 와 AOP 의 차이점
+* **Filter** :  요청/응답 레벨에서 적용 , 응답/요청 필터링 , (인증,권한관리,캐싱 등)
+* **AOP** : 메서드, 필드 등 코드 레벨에서 적용 , 공통 기능 분리 및 재사용 (로깅,트랜잭션,보안 등)
 
