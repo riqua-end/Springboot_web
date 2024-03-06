@@ -34,6 +34,8 @@ public class UserService {
                 cookie.setDomain("localhost"); // 해당 도메인에서만 사용
                 cookie.setPath("/"); // 경로 지정
                 cookie.setMaxAge(-1); // 연결된 동안만 사용
+                cookie.setHttpOnly(true); // 자바스크립트에서 해당 값을 읽을 수 없도록 보안 처리
+//                cookie.setSecure(true); // Https 에서만 사용되도록 설정, 로컬호스트에서는 http 라서 적용안됨
 
                 httpServletResponse.addCookie(cookie);
             }
